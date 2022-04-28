@@ -8,5 +8,3 @@ def gradingStudents(grades):
             newGrades.append(grade)
 
     return newGrades
-
-            
