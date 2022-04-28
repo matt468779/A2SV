@@ -1,9 +1,7 @@
-# Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         l3 = ListNode()
@@ -18,8 +16,6 @@ class Solution(object):
                 carry = 1
             else:
                 carry = 0
-            print ("--", end='')
-            print (l3.val)
             l1 = l1.next
             l2 = l2.next
             if l1 == None or l2 == None:
@@ -62,24 +58,3 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        
-def displayList(list):
-    while list != None:
-        print (list.val, end='')
-        print (" ", end='')
-        list = list.next
-
-if __name__ == "__main__":
-    sol = Solution()
-    l1 = ListNode(9)
-    l2 = ListNode(9, ListNode(9, ListNode(9)))
-    
-
-    
-    displayList(l1)
-    print ("hello")
-    displayList(l2)
-
-    l3 = sol.addTwoNumbers(l1, l2)
-    print (l3.val)
-    displayList(l3)
