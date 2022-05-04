@@ -1,28 +1,21 @@
 class Solution:
     maxDigit = 0
     def toInt(self, number: List[int]) -> int:
-        nums = number.copy()
-        num = str(nums[0])
-        length = len(nums)
+        num = str(number[0])
+        length = len(number)
         count = 0        
-        num = ""
-        for i in range(self.maxDigit):
-            if i < len(nums):
-                num += str(nums[i])
-            else:
-                num+=str(nums[i%len(nums)])
-        for i in range(1, length):
-            if (nums[i] > nums[0] or nums[i] == max(nums))  and nums[0] !=9:
+
+        for i in range(1, self.maxDigit):
+            if i < length and (number[i] > number[0] or number[i] == max(number))  and number[0] !=9 :
                 count += 1
-        print(count)
+            num += str(number[i%length])
         
-        for _ in range(length, 10+count-self.maxDigit + len(nums)):
+        for _ in range(self.maxDigit, 10 + count):
             num += "9"
-        print(num)
+
         return int(num)
 
     def equalDigit(self, nums: List[int]) -> int:
-        print(nums)
         num = ""
         for i in range(self.maxDigit):
             if i < len(nums):
