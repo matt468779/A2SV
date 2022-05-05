@@ -10,8 +10,6 @@ class Solution:
 
     def findKthBit(self, n: int, k: int) -> str:
         bits = ["0"]*n
-        temp = ""
-        level = 2
 
         for i in range(1, n):
             bits[i] = bits[i-1] + "1" + self.invertReverse(bits[i-1])
