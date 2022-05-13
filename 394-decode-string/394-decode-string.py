@@ -17,8 +17,7 @@ class Solution:
                 encoded += char
             if brackets == [] and times != "" and encoded != "":
                 encoded = encoded.replace('[', '', 1)
-                for _ in range(int(times)):
-                    word += self.decodeString(encoded)
+                word += self.decodeString(encoded) * int(times)
                 encoded = ""
                 times = ""
         return word
