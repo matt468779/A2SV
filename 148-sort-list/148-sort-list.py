@@ -44,16 +44,10 @@ class Solution:
         
         if right:
             temp3.val = right.val
-            temp1 = right.next
+            temp3.next = right.next
         else:
             temp3.val = left.val
-            temp1 = left.next
-        
-        while temp1:
-            temp3.next = ListNode()
-            temp3 = temp3.next
-            temp3.val = temp1.val
-            temp1 = temp1.next
+            temp3.next = left.next
         
         return sortedHead
             
