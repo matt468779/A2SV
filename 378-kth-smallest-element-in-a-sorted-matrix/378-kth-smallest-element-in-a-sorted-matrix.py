@@ -13,12 +13,22 @@ class Solution:
         while k > 0:
             heapq.heappush(heap, -matrix[i].pop())
             k -= 1
-        
+        jj = 0
+        print(heap[0])
         for j in range(i, h):
-            while len(matrix[j]):
-                p = -matrix[j].pop()
+            k = 0
+            
+
+            while k < len(matrix[j]):
+                jj += 1
+
+                p = -matrix[j][k]
                 if p > heap[0]:
                     heapq.heappushpop(heap, p)
+                else:
+                    break
+                k += 1
+        print(jj)
         return -heap[0]
                     
         
