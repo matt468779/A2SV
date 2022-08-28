@@ -1,8 +1,8 @@
-                                    A. Download More RAM
-                                    time limit per test1 second
-                                    memory limit per test256 megabytes
-                                    inputstandard input
-                                    outputstandard output
+                                                      A. Download More RAM
+                                                      time limit per test1 second
+                                                      memory limit per test256 megabytes
+                                                      inputstandard input
+                                                      outputstandard output
 Did you know you can download more RAM? There is a shop with n different pieces of software that increase your RAM. The i-th RAM increasing software takes ai GB of memory to run (temporarily, once the program is done running, you get the RAM back), and gives you an additional bi GB of RAM (permanently). Each software can only be used once. Your PC currently has k GB of RAM.
 
 Note that you can't use a RAM-increasing software if it takes more GB of RAM to use than what you currently have.
