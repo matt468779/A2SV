@@ -28,7 +28,7 @@ class Solution:
                     q.append((popped[0].left, popped[1]-1))
                 if popped[0].right:
                     q.append((popped[0].right, popped[1]+1))
-            print(res)
+
             for i in range(len(res)):
                 if type(res[i][-1]) is list:
                     res[i].extend(sorted(res[i].pop()))
