@@ -14,5 +14,6 @@ class Solution:
                     mx = node.val
                 dfs(node.left, mx)
                 dfs(node.right, mx)
+                
         dfs(root, float(-inf))
         return self.res
