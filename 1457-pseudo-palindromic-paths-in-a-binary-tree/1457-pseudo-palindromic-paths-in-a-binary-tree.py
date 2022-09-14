@@ -6,14 +6,10 @@
 #         self.right = right
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
-        self.res = 0
         def dfs(node, pali):
             if node:
                 if pali.get(node.val):
-                    if pali[node.val] > 1:
-                        pali[node.val] -= 1
-                    else:
-                        pali.pop(node.val)
+                    pali.pop(node.val)
                 else:
                     pali[node.val] = 1
                 
@@ -24,9 +20,10 @@ class Solution:
                     dfs(node.left, pali.copy())
                 else:
                     dfs(node.right, pali.copy())
-            elif len(pali) == 0 or (len(pali) == 1 and list(pali.items())[0][1] == 1):
+            elif len(pali) == 0 or len(pali) == 1:
                 self.res += 1
-        
+                
+        self.res = 0
         dfs(root, {})
         return self.res
         
