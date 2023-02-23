@@ -1,11 +1,8 @@
 class Solution:
     def minPairSum(self, nums: List[int]) -> int:
         nums.sort()
+        res = float('-inf')
+        for i in range(len(nums)//2):
+            res = max(res, nums[i]+nums[-i-1])
         
-        globalMax = 0
-        for i in range(len(nums)):
-            localMax = nums[i] + nums[len(nums)-i-1]
-            if localMax > globalMax:
-                globalMax = localMax
-
-        return globalMax
+        return res
