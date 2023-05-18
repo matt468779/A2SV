@@ -2,17 +2,21 @@ class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         res = []
         temp = []
-        def solve(state):
+        self.state = 0
+        def solve():
             if len(temp) == len(nums):
                 res.append(list(temp))
                 return 
             
+            te = self.state
             for i in range(len(nums)):
                 mask = 2**(len(nums)-i-1)
-                if not mask & state:
+                if not mask & self.state:
                     temp.append(nums[i])
-                    solve(state | mask)
+                    self.state |= mask
+                    solve()
+                    self.state = te
                     temp.pop()
             
-        solve(0)
+        solve()
         return res
