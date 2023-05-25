@@ -1,7 +1,5 @@
 class Solution:
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
-        diff = [gas]
-        [-3, 10, -11, 4]
         
         gasLeft = 0
         start = 0
